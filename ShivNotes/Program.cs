@@ -8,8 +8,24 @@ namespace ShivNotes
 {
     class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
+            var singleton = MySingleton.CreateSingleton();
+        }
+
+        internal class MySingleton
+        {
+            private static MySingleton _instance;
+
+            private MySingleton()
+            {
+                
+            }
+
+            public static MySingleton CreateSingleton()
+            {
+                return _instance;
+            }
         }
     }
 }
